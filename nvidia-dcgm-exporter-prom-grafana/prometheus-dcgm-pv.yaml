@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prometheus-dcgm-pv-server
+  namespace: monitoring-gpu
+spec:
+  storageClassName: prometheus-dcgm-server
+  capacity:
+    storage: 8Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /raid/nfsshare/server #/data/k8s/prometheus-dcgm/server
+    server: 192.168.111.11
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: prometheus-dcgm-pv-alertmanager
+  namespace: monitoring-gpu
+spec:
+  storageClassName: prometheus-dcgm-alertmanager
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /raid/nfsshare/alertmanager #/data/k8s/prometheus-dcgm/alertmanager
+    server: 192.168.111.11

@@ -1,0 +1,17 @@
+Alternative,using client as CA authority.
+
+#Be tiny Cert Authority
+#Generate private key.
+openssl genrsa -des3 -out myCA.key 4096
+
+#Generate root certificate
+openssl req -x509 -new -nodes -key myCA.key -sha256 -days 3650 -out myCA.pem
+
+#echo "Generate a secure server key."
+openssl genrsa -out grafana.io.key 4096
+
+#echo "Generate the certificate signing request."
+openssl req -new -key grafana.io.key -out grafana.io.csr -config req.conf
+
+#echo "Create the signed certificate with host client pem file"
+openssl x509 -req -in grafana.io.csr -CA myCA.pem -CAkey myCA.key -CAcreateserial -out grafana.io.crt -days 3650 -sha256

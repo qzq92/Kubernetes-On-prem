@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana
+  namespace: monitoring-gpu
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /login
+    kubernetes.io/ingress.class: nginx
+spec:
+#  tls:
+#  - secretName: grafana
+#    hosts:
+#    - grafana.io
+  rules:
+  - host: grafana.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: prometheus-operator-grafana
+          servicePort: 80

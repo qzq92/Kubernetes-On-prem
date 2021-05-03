@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-smb
+spec:
+  capacity:
+    storage: 100Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  mountOptions:
+    - dir_mode=2770
+    - file_mode=0660
+    - vers=3.0
+  csi:
+    driver: smb.csi.k8s.io
+    readOnly: false
+    volumeHandle: <obtain from kubectl describe csidrivers’s UUID > # make sure it's a unique id in the cluster
+    volumeAttributes:
+      source: "//<smbserver_ip>/<user>"
+    nodeStageSecretRef:
+      name: smbcreds #name of created secret object
+      namespace: default

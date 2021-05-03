@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prometheus-dcgm-pvc-alertmanager
+  namespace: monitoring-gpu
+spec:
+  storageClassName: prometheus-dcgm-pv-alertmanager
+  resources:
+    requests:
+      storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+---
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: prometheus-dcgm-pvc-server
+#  namespace: monitoring-gpu
+#spec:
+#  storageClassName: prometheus-dcgm-server
+#  resources:
+#    requests:
+#      storage: 8Gi
+#  accessModes:
+#    - ReadWriteOnce

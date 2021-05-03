@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: grafana-dcgm-pv-server
+  namespace: monitoring-gpu
+spec:
+  storageClassName: grafana-dcgm-server #Must match to grafana-dcgm-pv storageClassName
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: /raid/nfsshare/grafana-dcgm #/data/k8s/prometheus-dcgm/server
+    server: 192.168.111.11
