@@ -14,8 +14,12 @@
  - https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
  - https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
 
+
 ## Kubernetes version
 - 1.15.3
+
+## Documentations
+- Refer to Kubernetes_Deployment_edit.odt for more details on the cluster configurations. This documentation does not include Nvidia-dcgm, Prometheus and Grafana tools that were included.
 
 ## Acknowledgement
 - Kubernetes v1.15 guide (Not available as it has been deprecated). Official Kubernetes webpage [Kubernetes](https://kubernetes.io/)
