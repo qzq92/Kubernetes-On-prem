@@ -1,0 +1,4 @@
+quay.io/coreos/flannel:v0.11.0-s390x
+quay.io/coreos/flannel:v0.11.0-ppc64le
+quay.io/coreos/flannel:v0.11.0-arm64
+quay.io/coreos/flannel:v0.11.0-amd64
