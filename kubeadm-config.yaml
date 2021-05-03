@@ -1,0 +1,37 @@
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+kubernetesVersion: 1.15.3
+imageRepository: "k8s.gcr.io"
+
+# Uncomment below and comment above imageRepository tag above if you want to pull docker images from offline container repository (e.g GoHarbor) instead of k8s.gcr.io.
+# This only works if you have necessary images in your offline container repository
+
+# imageRepository: goharbor.io/admin/k8s.gcr.io
+
+#Change the IP accordingly based on your internal network configuration. Similar applies for etcd endpoints and apiServer certSANs
+controlPlaneEndpoint: "192.168.111.10:6443"
+etcd:
+   external:
+      endpoints:
+         - https://192.168.111.11:2379
+      caFile: /etc/etcd/ssl/ca.pem
+      certFile: /etc/etcd/ssl/etcd.pem
+      keyFile: /etc/etcd/ssl/etcd-key.pem
+networking:
+   podSubnet: 10.244.0.0/16 #Modify the podSubnet to private IP that is different from
+apiServer:
+   certSANs:
+      - 192.168.111.10
+      - 192.168.111.11
+   extraArgs:
+#      enable-admission-plugins: AlwaysPullImages,ExtendedResourceToleration # Please refer to official k8s documentation on various argument that can be configure
+      apiserver-count: "1"
+---
+#Custom kubelet configuration for initialisation
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+evictionHard:
+    imagefs.available: 5%
+    memory.available: "200Mi"
+featureGates:
+    DevicePlugins: true
