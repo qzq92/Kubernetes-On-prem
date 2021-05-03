@@ -1,0 +1,19 @@
+#Using auto-assign doesnt stop people from hardcoding the unused IP as LB service.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: metallb-system
+  name: config
+data:
+  config: |
+    address-pools:
+    - name: production
+      protocol: layer2
+      addresses:
+      - 192.168.111.20-192.168.111.35
+      auto-assign: false 
+    - name: sandbox
+      protocol: layer2
+      addresses: 
+      - 192.168.111.40-192.168.111.50
+

@@ -1,0 +1,10 @@
+# Docker-compose yaml file for starting apache2 service
+version: '3.8'
+services:
+  apache: #name of service
+    image: httpd:2.4
+    volumes:
+      - /var/www/html:/usr/local/apache2/htdocs/ #have requests made to our public IP address on port 8080 be redirected to port 80 on the container
+    ports:
+      - "8080:80"
+

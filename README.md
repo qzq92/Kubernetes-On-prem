@@ -1,5 +1,5 @@
 # Local Kubernetes(K8s) cluster setup 
-- The configuration and setup files here are created, edited and modified by referencing from various online sources which assisted in the setup of on-premise Kubernetes cluster. The configuration files also include other tools such as MetalLB, Nvidia-dcgm, Prometheus and Grafana
+- The configuration and setup files here are created, edited and modified by referencing from various online sources which assisted in the setup of on-premise Kubernetes cluster. The configuration files also include other tools such as MetalLB, Nvidia-dcgm, Prometheus and Grafana. Please note that yaml files dictates Kubernetes configuration and can either end with a .yaml or .yml extension in filenames.
 
 ## Pre-requisites
 - Ubuntu 18.04
