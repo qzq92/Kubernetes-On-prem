@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: goldpinger
+  labels:
+    app: goldpinger
+spec:
+  selector:
+    matchLabels:
+      app: goldpinger #Must match the matchlabel in spec block in goldpinger.yaml
+  endpoints:
+  - port: "metrics" #Must match port name specified in service kind of goldpinger
+    path: "/metrics"
