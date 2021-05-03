@@ -1,0 +1,22 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: test-pod
+spec:
+  containers:
+  - name: test-pod
+    image: goharbor.io/admin/busybox:1.24
+    imagePullPolicy: Always
+    command:
+      - "/bin/sh"
+    args:
+      - "-c"
+      - "touch /home/qzq/Desktop/nfsshare/SUCCESS && exit 0 || exit 1"
+    volumeMounts:
+      - name: nfs-pvc
+        mountPath: "/home/qzq/Desktop/nfsshare"
+  restartPolicy: "Never"
+  volumes:
+    - name: nfs-pvc
+      persistentVolumeClaim:
+        claimName: test-claim
