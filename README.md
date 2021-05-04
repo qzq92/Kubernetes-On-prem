@@ -34,6 +34,8 @@
 ## Acknowledgement
 - Kubernetes v1.15 guide (Not available as it has been deprecated). Official Kubernetes webpage [Kubernetes](https://kubernetes.io/)
 - External storage for Kubernetes to be cloned: [External-storage](https://github.com/kubernetes-incubator/external-storage.git)
+- Various online resources/discussions from online such as [CNBlogs](https://www.cnblogs.com/)
+- Former colleagues or friends
 
 ## Notes on using other versions
 - Please note that the setup may not work with latest versions of kubectl, kubeadm and kubelet as Kubernetes had made functionality changes in later versions
