@@ -25,7 +25,11 @@
 
 ## Documentations
 - Refer to Kubernetes_Deployment_edit.odt for more details on the cluster configurations. This documentation only covers content related to Kubernetes setup and configuration.
-- Refer to Nvidia-DCGM-Prometheus-Grafanav1.odt for more details on setting up, configuring using Prometheus and Grafana to have an overview on existing Kubernetes resources such as pods, persistent volumes, etc, gpu utilisation. For grafana dashboards, most of them are adapted from the following link: [Grafana dashboards](https://grafana.com/grafana/dashboards)
+- Refer to Nvidia-DCGM-Prometheus-Grafanav1.odt for more details on setting up, configuring using Prometheus and Grafana to have an overview on existing Kubernetes resources such as pods, persistent volumes, etc, gpu utilisation. Goldpinger is also included in the guide as well. For grafana dashboards, most of them are adapted from the following link: [Grafana dashboards](https://grafana.com/grafana/dashboards)
+- The guide is written by myself and is by no means a fool-proof guide based on multiple attempts in trying and debugging issues encountered.
+
+## Tools without documentation
+- K8dash. Please refer to [Octopus blog](https://octopus.com/blog/alternative-kubernetes-dashboards) or [Official k8s page](https://k8dash.io/) on details about k8dash.
 
 ## Acknowledgement
 - Kubernetes v1.15 guide (Not available as it has been deprecated). Official Kubernetes webpage [Kubernetes](https://kubernetes.io/)
