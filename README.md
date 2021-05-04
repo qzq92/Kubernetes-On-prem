@@ -20,8 +20,8 @@
 - Etcd v3.3.18
 - Keepalived v1.3.9 or v2.0.20
 - Cfssl v1.2 binaries (HTTP API server for signing, verifying, and bundling TLS certificates used for K8s)
- - https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
- - https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+  - https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+  - https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
 
 ## Documentations
 - Refer to Kubernetes_Deployment_edit.odt for more details on the cluster configurations. This documentation only covers content related to Kubernetes setup and configuration.
