@@ -32,11 +32,11 @@
 - K8dash. Please refer to [Octopus blog](https://octopus.com/blog/alternative-kubernetes-dashboards) or [Official k8s page](https://k8dash.io/) on details about k8dash.
 
 ## Acknowledgement
-- Kubernetes v1.15 guide (Not available as it has been deprecated). Official Kubernetes webpage [Kubernetes](https://kubernetes.io/)
-- External storage for Kubernetes to be cloned: [External-storage](https://github.com/kubernetes-incubator/external-storage.git)
-- Various online resources/discussions from online such as [CNBlogs](https://www.cnblogs.com/)
-- Former colleagues or friends
+- Kubernetes v1.15 guide (Not available as it has been deprecated). Official Kubernetes webpage [Kubernetes](https://kubernetes.io/).
+- External storage for Kubernetes to be cloned: [External-storage](https://github.com/kubernetes-incubator/external-storage.git).
+- Various online resources/discussions from online such as [CNBlogs](https://www.cnblogs.com/).
+- Former colleagues or friends.
 
 ## Notes on using other versions
-- Please note that the setup may not work with latest versions of kubectl, kubeadm and kubelet as Kubernetes had made functionality changes in later versions
+- Please note that the setup may not work with latest versions of kubectl, kubeadm and kubelet as Kubernetes had made functionality changes in later versions.
 
